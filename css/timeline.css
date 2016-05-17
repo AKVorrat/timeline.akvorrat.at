@@ -2,16 +2,28 @@
 	position: absolute;
 	z-index: -20;
 	height: calc(100% + 8em);
-	width: 80%;
+	width: 95%;
 	left: -8px;
 	margin-top: -4em;
 	margin-bottom: -4em;
 	border-right: 16px solid #fff;
 }
 
+@media screen and (min-width: 768px) {
+	#timeline_line {
+		width: 90%;
+	}
+}
+
 @media screen and (min-width: 992px) {
 	#timeline_line {
-		width: 50%;
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	#timeline_line {
+		width: 75%;
 	}
 }
 
@@ -23,182 +35,67 @@
 }
 
 .timeline_event {
-	position: relative;
-	width: 70%;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	color: #173233;
+	margin-bottom: 2em;
 }
 
-.timeline_event:nth-child(odd) {
-	margin-left: 0;
-	margin-right: auto;
-}
-.timeline_event:nth-child(even) {
-	margin-left: 0;
-	margin-right: auto;
-}
-
-.timeline_event:first-of-type {
-	margin-top: 0;
-}
-
-.timeline_event:last-of-type {
+.timeline_event:last-child {
 	margin-bottom: 0;
 }
 
-@media screen and (min-width: 992px) {
-	.timeline_event {
-		width: calc(50% - 2em);
-	}
-}
-
-@media screen and (min-width: 992px) {
-	.timeline_event {
-		width: calc(50% - 4em);
-	}
-	.timeline_event:nth-child(even) {
-		margin-right: 0;
-		margin-left: auto;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	.timeline_event {
-		width: calc(50% - 8em);
-	}
-}
-
 .timeline_event_header {
-	position: relative;
-	padding: 0.5em;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	align-flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	align-items: center;
+	padding: 0.5em 1em;
 	color: #fff;
-	background-color: #a14a72;
+	background-color: #000;
+}
+
+.timeline_event:nth-child(odd) > .timeline_event_header {
+	border-right: 5px solid #000;
+}
+
+.timeline_event:nth-child(even) > .timeline_event_header {
+	border-left: 5px solid #000;
 }
 
 .timeline_event_date {
-	z-index: -10;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-align-items: center;
-	align-items: center;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	font-size: 85%;
+	font-size: 75%;
 	font-weight: bold;
 	text-transform: uppercase;
-	background-color: #a14a72;
-}
-
-.timeline_event .timeline_event_date {
-	-webkit-justify-content: flex-end;
-	justify-content: flex-end;
-	margin-left: 30%;
-	padding-right: 1em;
-	text-align: right;
-	border-right: 5px solid #fff;
-}
-
-@media screen and (min-width: 992px) {
-	.timeline_event:nth-child(odd) .timeline_event_date {
-		margin-left: 40%;
-	}
-	.timeline_event:nth-child(even) .timeline_event_date {
-		-webkit-justify-content: flex-start;
-		justify-content: flex-start;
-		margin-left: -40%;
-		padding-left: 1em;
-		text-align: left;
-		border-left: 5px solid #fff;
-	}
 }
 
 .timeline_event_body {
+	width: 85%;
 	padding: 1em;
+	color: #000;
 	background-color: #fff;
 	overflow: hidden;
 }
 
+@media screen and (min-width: 768px) {
+	.timeline_event_body {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.timeline_event_body {
+		width: 75%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.timeline_event_body {
+		width: 80%;
+	}
+}
+
 .timeline_event_body > p {
 	text-align: justify;
-}
-
-.shrink {
-	-webkit-animation: shrink .6s forwards;
-	-moz-animation: shrink .6s forwards;
-	animation: shrink .6s forwards;
-}
-
-@keyframes shrink {
-	0% {
-		opacity: 1;
-		height: 100%;
-	}
-	100% {
-		opacity: 0;
-		height: 0%;
-	}
-}
-
-@-webkit-keyframes shrink {
-	0% {
-		opacity: 1;
-		height: 100%;
-	}
-	100% {
-		opacity: 0;
-		height: 0%;
-	}
-}
-
-@-moz-keyframes shrink {
-	0% {
-		opacity: 1;
-		height: 100%;
-	}
-	100% {
-		opacity: 0;
-		height: 0%;
-	}
-}
-
-.grow {
-	-webkit-animation: grow .6s forwards;
-	-moz-animation: grow .6s forwards;
-	animation: grow .6s forwards;
-}
-
-@keyframes grow {
-	0% {
-		opacity: 0;
-		height: 0%;
-	}
-	100% {
-		opacity: 1;
-		height: 100%;
-	}
-}
-
-@-webkit-keyframes grow {
-	0% {
-		opacity: 0;
-		height: 0%;
-	}
-	100% {
-		opacity: 1;
-		height: 100%;
-	}
-}
-
-@-moz-keyframes grow {
-	0% {
-		opacity: 0;
-		height: 0%;
-	}
-	100% {
-		opacity: 1;
-		height: 100%;
-	}
 }

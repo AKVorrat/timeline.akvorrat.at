@@ -23,7 +23,7 @@ html {
 
 body {
 	color: #fff;
-	background-color: #49a078;
+	background-color: #555;
 	font-size: 14px;
 	font-family: "OpenSans", "Helvetica Neue", "Helvetica", sans-serif;
 }
@@ -43,15 +43,15 @@ main {
 
 @media screen and (min-width: 992px) {
 	main {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	main {
-		padding-left: 10%;
-		padding-right: 10%;
+		padding-left: 20%;
+		padding-right: 20%;
 	}
 }
 
@@ -59,12 +59,12 @@ header,
 footer {
 	position: relative;
 	text-align: center;
+	background-color: #000;
 }
 
 header {
 	margin-bottom: 4em;
 	padding: 5em 0;
-	background-color: #2e6466;
 	border-bottom: 8px solid #fff;
 }
 
@@ -76,19 +76,28 @@ header > h1 {
 header > h2 {
 	margin: 0.8em 0 0;
 	opacity: 0.6;
+	filter: Alpha(opacity=60);
 	letter-spacing: 0.5vw;
 }
 
 footer {
 	margin-top: 4em;
 	padding: 0.5em;
-	background-color: #163233;
 	border-top: 4px solid #fff;
 }
 
-footer > a {
-	margin-left: 0.5em;
-	margin-right: 0.5em;
+footer ul {
+	list-style: none;
+}
+
+footer li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+footer li + li::before {
+	content: "| ";
 }
 
 h1, h2, h3, h4, h5, h6 {
